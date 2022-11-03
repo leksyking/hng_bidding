@@ -1,16 +1,19 @@
 package main
 
 import (
+	"crypto/sha256"
 	"encoding/csv"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
+	"io"
 	"log"
 	"os"
 )
 
 // a struct for storing CSV lines and annotate with JSON struct field tags
 type CSVFileJSON struct {
-	SeriesNumber int    `json:"series_number"`
+	SeriesNumber string `json:"series_number"`
 	Filename     string `json:"filename"`
 	Name         string `json:"name"`
 	Description  string `json:"description"`
@@ -24,11 +27,11 @@ func GetLine(data [][]string) {
 	var rec CSVFileJSON
 	for j, record := range data {
 		//omit header line
-		if j > 0 {
+		if j > 0 && j < 3 {
 			for i, field := range record {
 				switch i {
 				case 0:
-					//rec.SeriesNumber =
+					rec.SeriesNumber = field
 				case 1:
 					rec.Filename = field
 				case 2:
@@ -49,6 +52,20 @@ func GetLine(data [][]string) {
 			if err != nil {
 				log.Fatal(err)
 			}
+			nftfilename := fmt.Sprintf("%s.json", rec.Filename)
+			err = os.WriteFile(nftfilename, jsonData, 0644)
+			if err != nil {
+				log.Fatal(err)
+			}
+			fn, err := os.Open(nftfilename)
+			if err != nil {
+				log.Fatal(err)
+			}
+			h := sha256.New()
+			if _, err := io.Copy(h, fn); err != nil {
+				log.Fatal(err)
+			}
+			rec.Hash = hex.EncodeToString(h.Sum(nil))
 			// add the data in filename.json
 			fmt.Println(string(jsonData))
 		}
