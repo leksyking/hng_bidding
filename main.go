@@ -115,7 +115,7 @@ func GetAllLines(data [][]string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	if err := ConvertJSONToCSV("output.csv", "output.json"); err != nil {
+	if err := ConvertJSONToCSV("output.json", "output.csv"); err != nil {
 		log.Fatal(err)
 	}
 }
