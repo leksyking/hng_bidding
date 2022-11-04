@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "grandma-nanny",
   "description": "A grandmother that does nothing but sleeps all day.",
-  "minting_tool": "",
+  "minting_tool": "TEAM GEAR",
   "sensitive_content": false,
   "series_number": "208",
   "series_total": 420,

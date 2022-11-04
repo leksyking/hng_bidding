@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "esther-sassy",
   "description": "A rude lady.",
-  "minting_tool": "",
+  "minting_tool": "TEAM PRYBAR",
   "sensitive_content": false,
   "series_number": "86",
   "series_total": 420,

@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "ola-the-hardguy",
   "description": "Ola may be feared but he is such a coolheaded champ.",
-  "minting_tool": "",
+  "minting_tool": "TEAM RULER",
   "sensitive_content": false,
   "series_number": "355",
   "series_total": 420,

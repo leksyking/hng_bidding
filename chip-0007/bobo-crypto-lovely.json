@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "bobo-crypto-lovely",
   "description": "She is a crypto guru you can trust all through.",
-  "minting_tool": "",
+  "minting_tool": "TEAM ENGINE",
   "sensitive_content": false,
   "series_number": "55",
   "series_total": 420,

@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "ada-chewing-bubble-gum",
   "description": "Ada always chewing gum.",
-  "minting_tool": "",
+  "minting_tool": "TEAM BRAINBOX",
   "sensitive_content": false,
   "series_number": "140",
   "series_total": 420,

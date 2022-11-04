@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "goofy-simbi",
   "description": "An eccentric teenager that loves music.",
-  "minting_tool": "",
+  "minting_tool": "TEAM TAPE",
   "sensitive_content": false,
   "series_number": "227",
   "series_total": 420,

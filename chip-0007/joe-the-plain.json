@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "joe-the-plain",
   "description": "Plain and simple and no one in town is more gentle that broda Joe.",
-  "minting_tool": "",
+  "minting_tool": "TEAM HEADLIGHT",
   "sensitive_content": false,
   "series_number": "168",
   "series_total": 420,

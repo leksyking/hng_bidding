@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "granpa-willy",
   "description": "A grandfather that drinks beer and reads newspaper all day.",
-  "minting_tool": "",
+  "minting_tool": "TEAM GEAR",
   "sensitive_content": false,
   "series_number": "209",
   "series_total": 420,

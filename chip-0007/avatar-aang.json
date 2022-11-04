@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "avatar-aang",
   "description": "A man who is ready to save the world.",
-  "minting_tool": "",
+  "minting_tool": "TEAM GRIT",
   "sensitive_content": false,
   "series_number": "76",
   "series_total": 420,

@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "james-importer-and-exporter",
   "description": "James is the sole importer and exporter of spare parts.",
-  "minting_tool": "",
+  "minting_tool": "TEAM BRAINBOX",
   "sensitive_content": false,
   "series_number": "130",
   "series_total": 420,

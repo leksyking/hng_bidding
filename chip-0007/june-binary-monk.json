@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "june-binary-monk",
   "description": "She has a twin from Tibet and they always play together .",
-  "minting_tool": "",
+  "minting_tool": "TEAM ENGINE",
   "sensitive_content": false,
   "series_number": "53",
   "series_total": 420,

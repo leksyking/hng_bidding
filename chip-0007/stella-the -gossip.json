@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "stella-the -gossip",
   "description": "Nobody gossips on the block like stella when smoking.",
-  "minting_tool": "",
+  "minting_tool": "TEAM SCALE",
   "sensitive_content": false,
   "series_number": "307",
   "series_total": 420,

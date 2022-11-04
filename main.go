@@ -13,6 +13,26 @@ import (
 )
 
 var h = sha256.New()
+var teamName string
+
+func main() {
+	// open file
+	f, err := os.Open("HNGi9.csv")
+	if err != nil {
+		log.Fatal(err)
+	}
+	// close the file at the end of the program
+	defer f.Close()
+
+	// read csv data using csv.Reader
+	csvReader := csv.NewReader(f)
+	record, err := csvReader.ReadAll()
+	if err != nil {
+		log.Fatal(err)
+	}
+	// grab all the csv data
+	GetAllLines(record)
+}
 
 func ConvertJSONToCSV(src, dest string) error {
 	srcFile, err := os.Open(src)
@@ -40,7 +60,7 @@ func ConvertJSONToCSV(src, dest string) error {
 	}
 	for _, file := range File {
 		var csvRow []string
-		csvRow = append(csvRow, file.SeriesNumber, file.FileName, file.Name, file.Description, file.Gender, file.Attributes, file.UUID, file.Hash)
+		csvRow = append(csvRow, file.TeamName, file.SeriesNumber, file.FileName, file.Name, file.Description, file.Gender, file.Attributes, file.UUID, file.Hash)
 		if err := writer.Write(csvRow); err != nil {
 			return err
 		}
@@ -58,8 +78,12 @@ func GetAllLines(data [][]string) {
 			for i, field := range record {
 				switch i {
 				case 0:
-					rec.TeamName = field
-					chip.MintingTool = field
+					if field == "" {
+						field = teamName
+					}
+					teamName = field
+					rec.TeamName = teamName
+					chip.MintingTool = teamName
 				case 1:
 					rec.SeriesNumber = field
 					chip.SeriesNumber = field
@@ -81,7 +105,6 @@ func GetAllLines(data [][]string) {
 					for _, fd := range str {
 						f := strings.Split(fd, ":")
 						attr := Attributes{TraitType: f[0], Value: f[1]}
-						fmt.Println(attr)
 						chip.Attributes = append(chip.Attributes, attr)
 					}
 					//chip.Attributes = []Attributes{}
@@ -150,23 +173,4 @@ func GetAllLines(data [][]string) {
 	if err := ConvertJSONToCSV("output.json", "filename.output.csv"); err != nil {
 		log.Fatal(err)
 	}
-}
-
-func main() {
-	// open file
-	f, err := os.Open("HNGi9.csv")
-	if err != nil {
-		log.Fatal(err)
-	}
-	// close the file at the end of the program
-	defer f.Close()
-
-	// read csv data using csv.Reader
-	csvReader := csv.NewReader(f)
-	record, err := csvReader.ReadAll()
-	if err != nil {
-		log.Fatal(err)
-	}
-	// grab all the csv data
-	GetAllLines(record)
 }

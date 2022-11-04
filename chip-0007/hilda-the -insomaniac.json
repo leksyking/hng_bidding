@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "hilda-the -insomaniac",
   "description": "Hilda prefers to sleep during the day.",
-  "minting_tool": "",
+  "minting_tool": "TEAM SCALE",
   "sensitive_content": false,
   "series_number": "310",
   "series_total": 420,

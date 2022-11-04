@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "kwame-the-maths-teacher",
   "description": "Kwame teaches maths and is well known for punishing students.",
-  "minting_tool": "",
+  "minting_tool": "TEAM AXE",
   "sensitive_content": false,
   "series_number": "385",
   "series_total": 420,

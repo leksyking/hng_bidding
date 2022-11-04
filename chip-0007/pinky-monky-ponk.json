@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "pinky-monky-ponk",
   "description": "She love to dance the honky tonk.",
-  "minting_tool": "",
+  "minting_tool": "TEAM ENGINE",
   "sensitive_content": false,
   "series_number": "46",
   "series_total": 420,

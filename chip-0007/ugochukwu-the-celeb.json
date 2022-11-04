@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "ugochukwu-the-celeb",
   "description": "Ugochukwu is an online celebrity with many followers on social media.",
-  "minting_tool": "",
+  "minting_tool": "TEAM RULER",
   "sensitive_content": false,
   "series_number": "357",
   "series_total": 420,

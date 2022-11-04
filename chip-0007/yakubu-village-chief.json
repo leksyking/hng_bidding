@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "yakubu-village-chief",
   "description": "Yakubu is the best village chieftain.",
-  "minting_tool": "",
+  "minting_tool": "TEAM BRAINBOX",
   "sensitive_content": false,
   "series_number": "123",
   "series_total": 420,

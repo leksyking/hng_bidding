@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "karim-rapper",
   "description": "A young and proud Lagos rapper.",
-  "minting_tool": "",
+  "minting_tool": "TEAM TAPE",
   "sensitive_content": false,
   "series_number": "240",
   "series_total": 420,

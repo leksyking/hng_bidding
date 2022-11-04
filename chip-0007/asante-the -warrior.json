@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "asante-the -warrior",
   "description": "Asante came from a long line of warriors in Ghana.",
-  "minting_tool": "",
+  "minting_tool": "TEAM SCALE",
   "sensitive_content": false,
   "series_number": "309",
   "series_total": 420,

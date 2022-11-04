@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "nnamdi-the-barber",
   "description": "Nnamdi is a barber that devotes time to perfect his craft.",
-  "minting_tool": "",
+  "minting_tool": "TEAM CHISEL",
   "sensitive_content": false,
   "series_number": "115",
   "series_total": 420,

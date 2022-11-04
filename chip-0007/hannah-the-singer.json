@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "hannah-the-singer",
   "description": "Hannah loves singing and belongs to choir.",
-  "minting_tool": "",
+  "minting_tool": "TEAM CHISEL",
   "sensitive_content": false,
   "series_number": "105",
   "series_total": 420,

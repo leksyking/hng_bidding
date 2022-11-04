@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "wangari-the-waitress",
   "description": "Wangari; the aspiring musician that doubles as a waitress.",
-  "minting_tool": "",
+  "minting_tool": "TEAM VBELT",
   "sensitive_content": false,
   "series_number": "374",
   "series_total": 420,

@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "emeka-the-driver",
   "description": "Emeka is a fixture on the bustling streets of Lagos.",
-  "minting_tool": "",
+  "minting_tool": "TEAM AXE",
   "sensitive_content": false,
   "series_number": "389",
   "series_total": 420,

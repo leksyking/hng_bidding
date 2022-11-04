@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "charity-the-maid",
   "description": "A maid that works for the fun of it.",
-  "minting_tool": "",
+  "minting_tool": "TEAM GEAR",
   "sensitive_content": false,
   "series_number": "205",
   "series_total": 420,

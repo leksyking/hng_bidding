@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "fayo-the-yorubademon",
   "description": "Fayo is a yoruba demon with excellent communication skills.",
-  "minting_tool": "",
+  "minting_tool": "TEAM CHISEL",
   "sensitive_content": false,
   "series_number": "110",
   "series_total": 420,

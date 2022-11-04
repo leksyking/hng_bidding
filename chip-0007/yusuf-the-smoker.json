@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "yusuf-the-smoker",
   "description": "A chronic smoker with damaged lungs.",
-  "minting_tool": "",
+  "minting_tool": "TEAM GEAR",
   "sensitive_content": false,
   "series_number": "220",
   "series_total": 420,

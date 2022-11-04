@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "effiadem-the-fireman",
   "description": "A retired military general who always loves shooting at sight.",
-  "minting_tool": "",
+  "minting_tool": "TEAM PLUG",
   "sensitive_content": false,
   "series_number": "156",
   "series_total": 420,

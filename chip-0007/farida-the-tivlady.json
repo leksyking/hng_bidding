@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "farida-the-tivlady",
   "description": "Farida is a beautiful Tiv woman.",
-  "minting_tool": "",
+  "minting_tool": "TEAM CHISEL",
   "sensitive_content": false,
   "series_number": "104",
   "series_total": 420,

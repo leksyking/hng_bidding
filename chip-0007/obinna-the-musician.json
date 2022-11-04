@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "obinna-the-musician",
   "description": "Obinna might never be an a-list artist.",
-  "minting_tool": "",
+  "minting_tool": "TEAM POWERDRILL",
   "sensitive_content": false,
   "series_number": "270",
   "series_total": 420,

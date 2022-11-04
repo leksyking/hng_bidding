@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "quadri-the-teacher",
   "description": "Quadri is a devoted teacher that teaches mathematics.",
-  "minting_tool": "",
+  "minting_tool": "TEAM CHISEL",
   "sensitive_content": false,
   "series_number": "108",
   "series_total": 420,

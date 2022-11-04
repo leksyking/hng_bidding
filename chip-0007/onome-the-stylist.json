@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "onome-the-stylist",
   "description": "Onome is a fashionista with a pereferece for pipes over cigars.",
-  "minting_tool": "",
+  "minting_tool": "TEAM AXE",
   "sensitive_content": false,
   "series_number": "391",
   "series_total": 420,

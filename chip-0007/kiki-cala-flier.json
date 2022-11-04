@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "kiki-cala-flier",
   "description": "She flies first class and gets the best deals.",
-  "minting_tool": "",
+  "minting_tool": "TEAM ENGINE",
   "sensitive_content": false,
   "series_number": "51",
   "series_total": 420,

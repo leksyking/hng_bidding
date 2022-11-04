@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "njoki-binary-coder",
   "description": "She codes with the best language and tops the set.",
-  "minting_tool": "",
+  "minting_tool": "TEAM ENGINE",
   "sensitive_content": false,
   "series_number": "48",
   "series_total": 420,

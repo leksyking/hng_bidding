@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "chinedu-the-farmer",
   "description": "A hardworking farmer who has 6 boys who help out on the farm.",
-  "minting_tool": "",
+  "minting_tool": "TEAM RULER",
   "sensitive_content": false,
   "series_number": "350",
   "series_total": 420,

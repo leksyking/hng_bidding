@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "desmond-the-politician",
   "description": "A young politician who just became a minister",
-  "minting_tool": "",
+  "minting_tool": "TEAM HYDRAULICS",
   "sensitive_content": false,
   "series_number": "296",
   "series_total": 420,

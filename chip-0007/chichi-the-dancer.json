@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "chichi-the-dancer",
   "description": "Chichi loves dancing and party.",
-  "minting_tool": "",
+  "minting_tool": "TEAM CHISEL",
   "sensitive_content": false,
   "series_number": "102",
   "series_total": 420,

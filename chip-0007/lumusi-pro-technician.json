@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "lumusi-pro-technician",
   "description": "The electrician well known for wiring burnt buildings.",
-  "minting_tool": "",
+  "minting_tool": "TEAM PLUG",
   "sensitive_content": false,
   "series_number": "160",
   "series_total": 420,

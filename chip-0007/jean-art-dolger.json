@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "jean-art-dolger",
   "description": "Loves collecting art for charity.",
-  "minting_tool": "",
+  "minting_tool": "TEAM ENGINE",
   "sensitive_content": false,
   "series_number": "43",
   "series_total": 420,

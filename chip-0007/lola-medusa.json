@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "lola-medusa",
   "description": "Lola is the head maketer at her firm and she is the best at negotiating.",
-  "minting_tool": "",
+  "minting_tool": "TEAM BOOT",
   "sensitive_content": false,
   "series_number": "405",
   "series_total": 420,

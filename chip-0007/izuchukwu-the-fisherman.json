@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "izuchukwu-the-fisherman",
   "description": "A fisherman who knows how to paddle well",
-  "minting_tool": "",
+  "minting_tool": "TEAM HYDRAULICS",
   "sensitive_content": false,
   "series_number": "294",
   "series_total": 420,

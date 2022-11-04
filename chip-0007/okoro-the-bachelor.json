@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "okoro-the-bachelor",
   "description": "A local palm wine tapper with hopes and dreams",
-  "minting_tool": "",
+  "minting_tool": "TEAM HYDRAULICS",
   "sensitive_content": false,
   "series_number": "297",
   "series_total": 420,

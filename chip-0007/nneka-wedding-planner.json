@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "nneka-wedding-planner",
   "description": "Nneka plans the best weddings with great details.",
-  "minting_tool": "",
+  "minting_tool": "TEAM POWERDRILL",
   "sensitive_content": false,
   "series_number": "275",
   "series_total": 420,

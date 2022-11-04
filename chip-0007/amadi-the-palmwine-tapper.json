@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "amadi-the-palmwine-tapper",
   "description": "Amadi sells his palmwine at the village square.",
-  "minting_tool": "",
+  "minting_tool": "TEAM AXE",
   "sensitive_content": false,
   "series_number": "382",
   "series_total": 420,

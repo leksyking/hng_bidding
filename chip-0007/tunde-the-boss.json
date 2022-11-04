@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "tunde-the-boss",
   "description": "Tunde is a boss that loves to take charge at work.",
-  "minting_tool": "",
+  "minting_tool": "TEAM CHISEL",
   "sensitive_content": false,
   "series_number": "114",
   "series_total": 420,

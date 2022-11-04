@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "vicky-the-artist",
   "description": "An artist; she brings drawings to life.",
-  "minting_tool": "",
+  "minting_tool": "TEAM CRANKSHAFT",
   "sensitive_content": false,
   "series_number": "199",
   "series_total": 420,

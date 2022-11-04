@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "hammed-the-farmer",
   "description": "Hammed owns a farm with his family.",
-  "minting_tool": "",
+  "minting_tool": "TEAM CHISEL",
   "sensitive_content": false,
   "series_number": "103",
   "series_total": 420,

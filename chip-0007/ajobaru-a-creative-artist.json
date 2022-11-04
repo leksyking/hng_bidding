@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "ajobaru-a-creative-artist",
   "description": "A lovely artist who is known for creating magical art pieces that can spark a smile.",
-  "minting_tool": "",
+  "minting_tool": "TEAM PLUG",
   "sensitive_content": false,
   "series_number": "155",
   "series_total": 420,

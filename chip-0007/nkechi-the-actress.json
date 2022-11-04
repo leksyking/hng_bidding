@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "nkechi-the-actress",
   "description": "Nkechi is an international actress that acts in hollywood.",
-  "minting_tool": "",
+  "minting_tool": "TEAM CHISEL",
   "sensitive_content": false,
   "series_number": "111",
   "series_total": 420,

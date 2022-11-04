@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "nnena-pretty-girl",
   "description": "Nnena is beautiful girl that loves to talk about her beauty.",
-  "minting_tool": "",
+  "minting_tool": "TEAM CHISEL",
   "sensitive_content": false,
   "series_number": "113",
   "series_total": 420,

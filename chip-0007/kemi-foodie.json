@@ -2,7 +2,7 @@
   "format": "CHIP-0007",
   "name": "kemi-foodie",
   "description": "Kemi loves food and can also prepare good meals. ",
-  "minting_tool": "",
+  "minting_tool": "TEAM CHISEL",
   "sensitive_content": false,
   "series_number": "117",
   "series_total": 420,
