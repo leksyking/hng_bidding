@@ -4,7 +4,7 @@ package main
 type CSVFileJSON struct {
 	TeamName     string `json:"team_name"`
 	SeriesNumber string `json:"series_number"`
-	Filename     string `json:"filename"`
+	FileName     string `json:"filename"`
 	Name         string `json:"name"`
 	Description  string `json:"description"`
 	Gender       string `json:"gender"`
@@ -18,9 +18,9 @@ type CHIP_0007 struct {
 	Name             string       `json:"name"`
 	Description      string       `json:"description"`
 	MintingTool      string       `json:"minting_tool"`
-	SensitiveContent string       `json:"sensitive_content"`
+	SensitiveContent bool         `json:"sensitive_content"`
 	SeriesNumber     string       `json:"series_number"`
-	SeriesTotal      string       `json:"series_total"`
+	SeriesTotal      uint         `json:"series_total"`
 	Attributes       []Attributes `json:"attributes"`
 	Collection       Collection   `json:"collection"`
 }
@@ -31,10 +31,12 @@ type Attributes struct {
 }
 
 type Collection struct {
-	Name       string `json:"name"`
-	ID         string `json:"id"`
-	Attributes []struct {
-		Type  string `json:"type"`
-		Value string `json:"value"`
-	} `json:"attributes"`
+	Name       string                `json:"name"`
+	ID         string                `json:"id"`
+	Attributes []CollectionAttribute `json:"attributes"`
+}
+
+type CollectionAttribute struct {
+	Type  string `json:"type"`
+	Value string `json:"value"`
 }

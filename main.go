@@ -11,6 +11,8 @@ import (
 	"os"
 )
 
+var h = sha256.New()
+
 func ConvertJSONToCSV(src, dest string) error {
 	srcFile, err := os.Open(src)
 	if err != nil {
@@ -37,7 +39,7 @@ func ConvertJSONToCSV(src, dest string) error {
 	}
 	for _, file := range File {
 		var csvRow []string
-		csvRow = append(csvRow, file.SeriesNumber, file.Filename, file.Name, file.Description, file.Gender, file.Attributes, file.UUID, file.Hash)
+		csvRow = append(csvRow, file.SeriesNumber, file.FileName, file.Name, file.Description, file.Gender, file.Attributes, file.UUID, file.Hash)
 		if err := writer.Write(csvRow); err != nil {
 			return err
 		}
@@ -47,36 +49,83 @@ func ConvertJSONToCSV(src, dest string) error {
 
 func GetAllLines(data [][]string) {
 	var JSONFile []CSVFileJSON
-	var chipFormat []CHIP_0007
 	for j, record := range data {
 		//omit header line
-		if j > 0 {
+		if j == 1 {
 			var rec CSVFileJSON
 			var chip CHIP_0007
 			for i, field := range record {
 				switch i {
 				case 0:
-					rec.SeriesNumber = field
+					rec.TeamName = field
+					chip.MintingTool = field
 				case 1:
-					rec.Filename = field
+					rec.SeriesNumber = field
+					chip.SeriesNumber = field
 				case 2:
-					rec.Name = field
+					rec.FileName = field
+					chip.Name = field
 				case 3:
-					rec.Description = field
+					rec.Name = field
 				case 4:
-					rec.Gender = field
+					rec.Description = field
+					chip.Description = field
 				case 5:
-					rec.Attributes = field
+					rec.Gender = field
 				case 6:
+					rec.Attributes = field
+					// write the logic for the attributes
+					//loop through field
+					fmt.Println(field)
+					//chip.Attributes = []Attributes{}
+				case 7:
 					rec.UUID = field
 				}
 			}
+			//add rest of CHIP FORMAT data
+			chip.Format = "CHIP-0007"
+			chip.SensitiveContent = false
+			chip.SeriesTotal = 420
+			attributes := CollectionAttribute{
+				Type:  "description",
+				Value: "Rewards for accomplishments during HNGi9.",
+			}
+			chip.Collection = Collection{
+				Name:       "Zuri NFT Tickets for Free Lunch",
+				ID:         "b774f676-c1d5-422e-beed-00ef5510c64d",
+				Attributes: []CollectionAttribute{attributes},
+			}
+
+			//CHIP_0007 FORMAT
+			{
+				jsonData, err := json.MarshalIndent(chip, "", "  ")
+				if err != nil {
+					log.Fatal(err)
+				}
+				chipfilename := fmt.Sprintf("chip-0007/%s.json", chip.Name)
+				err = os.WriteFile(chipfilename, jsonData, 0644)
+				if err != nil {
+					log.Fatal(err)
+				}
+				chi, err := os.Open(chipfilename)
+				if err != nil {
+					log.Fatal(err)
+				}
+				defer chi.Close()
+
+				//Hash the chip-0007 format json file
+				if _, err := io.Copy(h, chi); err != nil {
+					log.Fatal(err)
+				}
+			}
+			//CSVFileJSON FORMAT
 			// convert the array to json using the MarshalIndent function
+			rec.Hash = hex.EncodeToString(h.Sum(nil))
 			jsonData, err := json.MarshalIndent(rec, "", "  ")
 			if err != nil {
 				log.Fatal(err)
 			}
-			nftfilename := fmt.Sprintf("%s.json", rec.Filename)
+			nftfilename := fmt.Sprintf("csv/%s.json", rec.FileName)
 			err = os.WriteFile(nftfilename, jsonData, 0644)
 			if err != nil {
 				log.Fatal(err)
@@ -86,11 +135,6 @@ func GetAllLines(data [][]string) {
 				log.Fatal(err)
 			}
 			defer fn.Close()
-			h := sha256.New()
-			if _, err := io.Copy(h, fn); err != nil {
-				log.Fatal(err)
-			}
-			rec.Hash = hex.EncodeToString(h.Sum(nil))
 			JSONFile = append(JSONFile, rec)
 		}
 	}
@@ -102,9 +146,10 @@ func GetAllLines(data [][]string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	if err := ConvertJSONToCSV("output.json", "output.csv"); err != nil {
+	if err := ConvertJSONToCSV("output.json", "filename.output.csv"); err != nil {
 		log.Fatal(err)
 	}
+
 }
 
 func main() {
