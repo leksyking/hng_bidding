@@ -7,11 +7,13 @@ import (
 	"os"
 )
 
-var h = sha256.New()
-var teamName string
+var (
+	h        = sha256.New() //sha256 hash
+	teamName string         //team name global variable
+)
 
 func main() {
-	// open file
+	// open csv file
 	f, err := os.Open("HNGi9.csv")
 	if err != nil {
 		log.Fatal(err)

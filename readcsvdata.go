@@ -49,7 +49,6 @@ func GetAllLines(data [][]string) {
 						attr := Attributes{TraitType: f[0], Value: f[1]}
 						chip.Attributes = append(chip.Attributes, attr)
 					}
-					//chip.Attributes = []Attributes{}
 				case 7:
 					rec.UUID = field
 				}
