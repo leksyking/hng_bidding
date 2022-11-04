@@ -1,0 +1,45 @@
+{
+  "format": "CHIP-0007",
+  "name": "cynthia-cute-eyes",
+  "description": "Cynthia with priceless cute eyes.",
+  "minting_tool": "",
+  "sensitive_content": false,
+  "series_number": "138",
+  "series_total": 420,
+  "attributes": [
+    {
+      "trait_type": "hair",
+      "value": "yellow ;eyes"
+    },
+    {
+      "trait_type": "clothing",
+      "value": " blue and yellow"
+    },
+    {
+      "trait_type": "accessories",
+      "value": " none"
+    },
+    {
+      "trait_type": "expression",
+      "value": " serious face"
+    },
+    {
+      "trait_type": "strength",
+      "value": " mild"
+    },
+    {
+      "trait_type": "weakness",
+      "value": "pride"
+    }
+  ],
+  "collection": {
+    "name": "Zuri NFT Tickets for Free Lunch",
+    "id": "b774f676-c1d5-422e-beed-00ef5510c64d",
+    "attributes": [
+      {
+        "type": "description",
+        "value": "Rewards for accomplishments during HNGi9."
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "format": "CHIP-0007",
+  "name": "mwembu-the-elder",
+  "description": "Mwembu is old but not so old and yellow is his favorite color.",
+  "minting_tool": "",
+  "sensitive_content": false,
+  "series_number": "326",
+  "series_total": 420,
+  "attributes": [
+    {
+      "trait_type": "hair",
+      "value": " bald"
+    },
+    {
+      "trait_type": "eyes",
+      "value": " black teeth"
+    }
+  ],
+  "collection": {
+    "name": "Zuri NFT Tickets for Free Lunch",
+    "id": "b774f676-c1d5-422e-beed-00ef5510c64d",
+    "attributes": [
+      {
+        "type": "description",
+        "value": "Rewards for accomplishments during HNGi9."
+      }
+    ]
+  }
+}

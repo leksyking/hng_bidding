@@ -9,6 +9,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"strings"
 )
 
 var h = sha256.New()
@@ -33,7 +34,7 @@ func ConvertJSONToCSV(src, dest string) error {
 	writer := csv.NewWriter(outputFile)
 	defer writer.Flush()
 
-	header := []string{"Series Number", "Filename", "Name", "Description", "Gender", "Attributes", "UUID", "Hash"}
+	header := []string{"TEAM NAMES", "Series Number", "Filename", "Name", "Description", "Gender", "Attributes", "UUID", "Hash"}
 	if err := writer.Write(header); err != nil {
 		return err
 	}
@@ -51,7 +52,7 @@ func GetAllLines(data [][]string) {
 	var JSONFile []CSVFileJSON
 	for j, record := range data {
 		//omit header line
-		if j == 1 {
+		if j > 0 {
 			var rec CSVFileJSON
 			var chip CHIP_0007
 			for i, field := range record {
@@ -76,11 +77,28 @@ func GetAllLines(data [][]string) {
 					rec.Attributes = field
 					// write the logic for the attributes
 					//loop through field
-					fmt.Println(field)
+					str := strings.Split(field, "; ")
+					for _, fd := range str {
+						f := strings.Split(fd, ":")
+						attr := Attributes{TraitType: f[0], Value: f[1]}
+						fmt.Println(attr)
+						chip.Attributes = append(chip.Attributes, attr)
+					}
 					//chip.Attributes = []Attributes{}
 				case 7:
 					rec.UUID = field
 				}
+			}
+			//CSVFileJSON FORMAT
+			// convert the array to json using the MarshalIndent function
+			jsData, err := json.MarshalIndent(rec, "", "  ")
+			if err != nil {
+				log.Fatal(err)
+			}
+			nftfilename := fmt.Sprintf("csv/%s.json", rec.FileName)
+			err = os.WriteFile(nftfilename, jsData, 0644)
+			if err != nil {
+				log.Fatal(err)
 			}
 			//add rest of CHIP FORMAT data
 			chip.Format = "CHIP-0007"
@@ -97,44 +115,27 @@ func GetAllLines(data [][]string) {
 			}
 
 			//CHIP_0007 FORMAT
-			{
-				jsonData, err := json.MarshalIndent(chip, "", "  ")
-				if err != nil {
-					log.Fatal(err)
-				}
-				chipfilename := fmt.Sprintf("chip-0007/%s.json", chip.Name)
-				err = os.WriteFile(chipfilename, jsonData, 0644)
-				if err != nil {
-					log.Fatal(err)
-				}
-				chi, err := os.Open(chipfilename)
-				if err != nil {
-					log.Fatal(err)
-				}
-				defer chi.Close()
+			jsonData, err := json.MarshalIndent(chip, "", "  ")
+			if err != nil {
+				log.Fatal(err)
+			}
+			chipfilename := fmt.Sprintf("chip-0007/%s.json", chip.Name)
+			err = os.WriteFile(chipfilename, jsonData, 0644)
+			if err != nil {
+				log.Fatal(err)
+			}
+			chi, err := os.Open(chipfilename)
+			if err != nil {
+				log.Fatal(err)
+			}
+			defer chi.Close()
 
-				//Hash the chip-0007 format json file
-				if _, err := io.Copy(h, chi); err != nil {
-					log.Fatal(err)
-				}
+			//Hash the chip-0007 format json file
+			if _, err := io.Copy(h, chi); err != nil {
+				log.Fatal(err)
 			}
-			//CSVFileJSON FORMAT
-			// convert the array to json using the MarshalIndent function
+
 			rec.Hash = hex.EncodeToString(h.Sum(nil))
-			jsonData, err := json.MarshalIndent(rec, "", "  ")
-			if err != nil {
-				log.Fatal(err)
-			}
-			nftfilename := fmt.Sprintf("csv/%s.json", rec.FileName)
-			err = os.WriteFile(nftfilename, jsonData, 0644)
-			if err != nil {
-				log.Fatal(err)
-			}
-			fn, err := os.Open(nftfilename)
-			if err != nil {
-				log.Fatal(err)
-			}
-			defer fn.Close()
 			JSONFile = append(JSONFile, rec)
 		}
 	}
@@ -149,7 +150,6 @@ func GetAllLines(data [][]string) {
 	if err := ConvertJSONToCSV("output.json", "filename.output.csv"); err != nil {
 		log.Fatal(err)
 	}
-
 }
 
 func main() {
