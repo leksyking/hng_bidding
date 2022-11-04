@@ -11,18 +11,6 @@ import (
 	"os"
 )
 
-// a struct for storing CSV lines and annotate with JSON struct field tags
-type CSVFileJSON struct {
-	SeriesNumber string `json:"series_number"`
-	Filename     string `json:"filename"`
-	Name         string `json:"name"`
-	Description  string `json:"description"`
-	Gender       string `json:"gender"`
-	Attributes   string `json:"attributes"`
-	UUID         string `json:"uuid"`
-	Hash         string `json:"hash"`
-}
-
 func ConvertJSONToCSV(src, dest string) error {
 	srcFile, err := os.Open(src)
 	if err != nil {
@@ -59,10 +47,12 @@ func ConvertJSONToCSV(src, dest string) error {
 
 func GetAllLines(data [][]string) {
 	var JSONFile []CSVFileJSON
+	var chipFormat []CHIP_0007
 	for j, record := range data {
 		//omit header line
 		if j > 0 {
 			var rec CSVFileJSON
+			var chip CHIP_0007
 			for i, field := range record {
 				switch i {
 				case 0:
@@ -101,9 +91,6 @@ func GetAllLines(data [][]string) {
 				log.Fatal(err)
 			}
 			rec.Hash = hex.EncodeToString(h.Sum(nil))
-			// add the data in filename.json
-			// fmt.Println(string(jsonData))
-			// convert back JSON to csv file
 			JSONFile = append(JSONFile, rec)
 		}
 	}
